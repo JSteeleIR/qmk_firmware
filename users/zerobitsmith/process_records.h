@@ -11,6 +11,7 @@ enum custom_keycodes {
   M_MALL,
   M_FLSH,
   M_VRSN,
+  M_TEST,
   // Secret Macros
   M_XXX1,
   M_XXX2,

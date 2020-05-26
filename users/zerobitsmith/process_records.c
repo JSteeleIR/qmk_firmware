@@ -14,6 +14,13 @@ bool process_record_oled(uint16_t keycode, keyrecord_t *record) { return true; }
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
 
+    // Send Test Macro String
+    case M_TEST:
+     if (record->event.pressed) {
+        SEND_STRING("Test macro!");
+      }
+      break;
+
     // Sends QMK make command to compile keyboard
     case M_MAKE:
      if (record->event.pressed) {
@@ -30,7 +37,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 
     // Sends QMK make command with the correct bootloader
     case M_FLSH:
-      if (!record->event.pressed) {
+      if (record->event.pressed) {
         SEND_STRING("rm -f *.hex && rm -rf .build/ && make " QMK_KEYBOARD ":" QMK_KEYMAP
           #if  (defined(BOOTLOADER_DFU) || defined(BOOTLOADER_LUFA_DFU) || defined(BOOTLOADER_QMK_DFU))
             ":dfu "
@@ -50,7 +57,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     // Sends QMK version
     case M_VRSN:
       if (record->event.pressed) {
-        SEND_STRING (QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION ", Built on: " QMK_BUILDDATE);
+        SEND_STRING(QMK_KEYBOARD "/" QMK_KEYMAP " @ " QMK_VERSION ", Built on: " QMK_BUILDDATE);
       }
       break;
 

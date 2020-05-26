@@ -21,6 +21,11 @@
 #include "eeprom.h"
 #include "process_records.h"
 
+#ifdef TAPPING_TERM
+  #undef TAPPING_TERM
+  #define TAPPING_TERM 300
+#endif
+
 #ifdef TAP_DANCE_ENABLE
   #include "tap_dances.h"
 #endif

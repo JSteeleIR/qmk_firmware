@@ -24,7 +24,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         | Mic Toggle        | Cam Toggle | RGB Mode           |
      */
     [0] = LAYOUT(
-        KC_MUTE, LCTL(LGUI(KC_G)), KC_MPLY,
+        KC_MUTE, LCTL(SGUI(KC_G)), KC_MPLY,
         LCTL(LGUI(KC_G)), LGUI(LSA(KC_G)), TG(1),
         LGUI(KC_G), SGUI(KC_G), RGB_MOD
     ),

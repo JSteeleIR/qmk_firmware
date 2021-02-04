@@ -34,8 +34,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         | Media Previous | Media Play/pause | Media Next |
      */
     [1] = LAYOUT(
-        RESET  , KC_17, KC_STOP,
-        KC_18, KC_19, _______,
+        RESET  , KC_F17, KC_STOP,
+        KC_F18, KC_F19, _______,
         KC_MPRV, KC_MPLY, KC_MNXT
     ),
 };

@@ -34,7 +34,7 @@
   #include "split_util.h"
 #endif
 
-#ifdef ENCODER_ENABLE
+#if defined(ENCODER_ENABLE) & !defined(KEYBOARD_keebio_bdn9_rev1)
 bool left_encoder_rotated;
 bool right_encoder_rotated;
 uint16_t encoder_rotated_timer;
